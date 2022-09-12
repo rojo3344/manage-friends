@@ -1,0 +1,33 @@
+<ng-container [formGroup]="friendsFormGroupControl">
+  <mat-form-field hintLabel="Max 30 characters" appearance="fill">
+    <mat-label>Name</mat-label>
+    <input formControlName="name" matInput #nameElement>
+  </mat-form-field>
+  <mat-form-field hintLabel="Max 3 characters" appearance="fill">
+    <mat-label>Age</mat-label>
+    <input formControlName="age" matInput>
+  </mat-form-field>
+  <mat-form-field hintLabel="Max 3 characters" appearance="fill">
+    <mat-label>Weight</mat-label>
+    <input formControlName="weight" matInput>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="full_width" hintLabel="Max 20 characters" appearance="fill">
+    <mat-label>Friends</mat-label>
+    <mat-chip-list #chipList >
+      <mat-chip *ngFor="let friendContact of friendContacts" (removed)="remove(friendContact)">
+        {{ friendContact }}
+        <button matChipRemove>
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-chip>
+      <input formControlName="friends" matInput
+             placeholder="New contact..."
+             [matChipInputFor]="chipList"
+             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+             [matChipInputAddOnBlur]="addOnBlur"
+             (matChipInputTokenEnd)="add($event)">
+    </mat-chip-list>
+  </mat-form-field>
+</ng-container>
+

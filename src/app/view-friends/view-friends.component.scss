@@ -1,0 +1,28 @@
+.flex-container {
+  width: 95%;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.list_card {
+  width: 45%;
+  margin-right: 15px;
+}
+
+.detail_btn {
+  position: absolute;
+  right: 10px;
+}
+
+.detail_card {
+  width: 40%;
+}
+
+mat-card-header {
+  height: 30px;
+}
+
+.person_icon {
+  margin-right: 5px;
+}

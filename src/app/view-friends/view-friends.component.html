@@ -1,0 +1,31 @@
+<div class="flex-container">
+  <mat-card class="list_card">
+    <mat-card-header>
+      <mat-checkbox [checked]="showFriendDetail" class="detail_btn" value="listDetail" (change)="showDetails()">
+        Show details
+      </mat-checkbox>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <div *ngFor="let friend of friends | async">
+          <mat-list>
+            <mat-list-item>
+              <mat-icon class="person_icon">person</mat-icon>
+              {{ friend.name }}
+            </mat-list-item>
+            <span>
+            </span>
+            <ng-container *ngIf="showFriendDetail">
+              <app-friend-details class="detail_card" [friendDetail]="friend"></app-friend-details>
+            </ng-container>
+            <mat-divider></mat-divider>
+          </mat-list>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <app-bar-chart [data]="friends" [xCoordinateVal]="'name'" [yCoordinateVal]="'age'"></app-bar-chart>
+</div>
+
+
+
+

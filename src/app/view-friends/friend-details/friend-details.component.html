@@ -1,0 +1,16 @@
+<ng-container *ngIf="friendDetail">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Friends</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>List: {{ friendDetail.friends.join(", ") }}</p>
+      <mat-divider></mat-divider>
+      <div class="detail">
+        <span class="friend_detail">Age: {{ friendDetail.age }}</span>
+        <span class="friend_detail">Weight: {{ friendDetail.weight }}</span>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</ng-container>
+

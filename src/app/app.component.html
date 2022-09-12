@@ -1,0 +1,10 @@
+<nav class="nav_tabs" mat-tab-nav-bar [backgroundColor]="'primary'">
+  <a mat-tab-link *ngFor="let link of linksData"
+     [routerLink]="link.path"> {{ link.text }}
+  </a>
+</nav>
+
+<mat-tab-nav-panel>
+  <router-outlet ></router-outlet>
+</mat-tab-nav-panel>
+
